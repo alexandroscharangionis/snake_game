@@ -8,16 +8,20 @@ screen.title("Snake Game")
 
 
 def create_snake():
-    '''Creates snake avatar'''
+    '''Builds snake avatar. Returns list of snake segments.'''
     # Starting pos for each of the 3 squares that the snake consists of
     starting_position = [0, 0]
-
+    snake_segments = []
     # Creates & places the 3 squares that the snake consists of
     for _ in range(3):
-        turtle = Turtle(shape='square')
-        turtle.color('white')
-        turtle.setposition(tuple(starting_position))
+        segment = Turtle(shape='square')
+        segment.color('white')
+        segment.setposition(tuple(starting_position))
+        snake_segments.append(segment)
         starting_position[0] -= 20
+    return snake_segments
 
+
+segments = create_snake()
 
 screen.exitonclick()
