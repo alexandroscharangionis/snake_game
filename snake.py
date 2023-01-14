@@ -25,6 +25,9 @@ class Snake():
         new_segment.goto(position)
         self.segments.append(new_segment)
 
+    def extend(self):
+        self.add_segment(self.segments[-1].position())
+
     def move(self):
         '''Starting from the last segment (back of the snake), move each segment to the position of the segment in front of it'''
         for seg_num in range(len(self.segments) - 1, 0, -1):
