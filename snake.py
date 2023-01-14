@@ -16,11 +16,14 @@ class Snake():
     def create_snake(self):
         '''Builds snake avatar by placing separate segments at starting positions.'''
         for position in STARTING_POSITIONS:
-            new_segment = Turtle("square")
-            new_segment.color("white")
-            new_segment.penup()
-            new_segment.goto(position)
-            self.segments.append(new_segment)
+            self.add_segment(position)
+
+    def add_segment(self, position):
+        new_segment = Turtle("square")
+        new_segment.color("white")
+        new_segment.penup()
+        new_segment.goto(position)
+        self.segments.append(new_segment)
 
     def move(self):
         '''Starting from the last segment (back of the snake), move each segment to the position of the segment in front of it'''
